@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Idle Typer</title>
+    <link rel="icon" href="thumbnail.png">
+    <meta charset="UTF-8">
+    <meta name="author" content="Thomas Manfredo">
+    <meta name="viewport" , content="width=device-width" , initial-scale="1.0">
+    <link rel="stylesheet" href="idletyper.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>Idle Typer</header>
+    <button class="toggle" id="openInstructions">Instructions</button>
+    <div id="instructionsPosition">
+        <div class="instructions">
+            <div class="instructionsContent">
+                <h2>Welcome to Idle Typer!</h2>
+                <p>Despite the name of this game, you will need to put in some work to get this game moving on its own! 
+                    The premise of this game is that you need to type the words on screen to get the in-game currency of 'characters'.
+                    Each word you complete gives you more 'characters' to spend which will allow you to purchase different upgrades to get you more characters!"
+                    The game will only use your keyboard to type characters, and your mouse to select upgrades and navigate the page! Once you type the full word,
+                    your score will be updated, but beware! Any incorrect characters typed will cause your score to decrease!<br><br>
+                <h4>Upgrades - Prices increase with each purchase</h4>
+                    <strong>Displayed Words: </strong> You can type more words at once with this upgrade! Up to 9 total words can be available to use at once!<br>
+                    <strong>Auto-Typer: </strong> This upgrade will give you characters each second without a letter needing to be typed! 
+                            It starts at 0 Characters Per Second (CPS) and increases by 1 from there! <br>
+                    <strong>Letter Values: </strong>You have the option to increase the value of each letter, but be warned! Incorrect characters typed will cause your score to decrement by the same amount! <br><br>
+                <h4>Tips</h4>
+                    <li>Work fast, but don't get ahead of yourself! Those incorrect characters can make you lose a lot down the road!</li>
+                    <li>Same letters are counted with one keystroke, so don't let double letters mess you up!</li>
+                    <br><br><span id="encouragement">Now get out there and get typing!</span></p>
+                <canvas id="canvas"></canvas>
+                <button class="toggle" id="closeInstructions">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="upgrades">
+            <legend>Upgrades</legend>
+
+            <div id="wordcount" class="upgrade" type="button">
+                <p>
+                    Displayed Words<br>
+                    Words:<span id="wordCount">1</span><br>
+                    Cost: <span id="wordCost">100</span> <img class="cent" id="cpsImage" src="images/cent.png"></img></p>
+            </div>
+
+            <hr>
+
+            <div id="auto" class="upgrade" type="button">
+                <p>
+                    Auto-Typer<br>
+                    CPS:<span id="cps">0</span><br>
+                    Cost: <span id="autoCost">10</span> <img class="cent" id="cpsImage" src="images/cent.png"></img></p>
+            </div>
+
+            <hr>
+
+            <div id="value" class="upgrade" type="button">
+                <p>
+                    Letter Value<br>
+                    Value Per Letter:<span id="letterValue">1</span><br>
+                    Cost: <span id="letterCost">50</span> <img class="cent" id="cpsImage" src="images/cent.png"></img></p>
+            </div>
+
+        </div>
+
+        <div id="main">
+            <div id="score">
+                <img id="cent" class="cent" src="images/cent.png"></img>
+                <p id="characters">0</p><span id="scoreMath" style="margin-left: 2px;"></span> 
+            </div>
+
+            <div id="wordscape">
+                <table id="wordtable">
+                    <tr id="toprow">
+                        <td id="w0" class="4 5 6 7 8 9"></th>
+                        <td id="w1" class="6 7 8 9"></th>
+                        <td id="w2" class="4 5 6 7 8 9"></th>
+                    </tr>
+                    <tr id="middlerow">
+                        <td id="w3" class="2 3 8 9"></th>
+                        <td id="w4" class="1 3 5 7 9"></th>
+                        <td id="w5" class="2 3 8 9"></td></th>
+                    </tr>
+                    <tr id="bottomrow">
+                        <td id="w6" class="4 5 6 7 8 9"></td>
+                        <td id="w7" class="6 7 8 9"></td>
+                        <td id="w8" class="4 5 6 7 8 9"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="letterCounter">
+                <p id="curLetter">Begin Typing</p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="idletyper.js"></script>
+</body>
+
+</html>
